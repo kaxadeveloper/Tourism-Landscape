@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("img/kazuo-ota-wtCJQ19hMN4-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  font-family: "Prata", serif;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+/* === Sidebar === */
+aside {
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  width: 280px;
+  height: 100vh;
+  transition: all 0.3s ease;
+}
+
+aside ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+aside a {
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  margin: 0.8rem 0;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+aside a:hover {
+  color: #feab51;
+}
+
+.special {
+  background-color: #feab51;
+  color: black;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* === Main content === */
+main {
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.fa-city {
+  color: goldenrod;
+}
+
+main h1 {
+  color: gold;
+  margin: 0;
+  font-size: 3rem;
+}
+
+main h3 {
+  color: #feab51;
+  margin: 0.5rem 0 0;
+  font-size: 1.5rem;
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 1024px) {
+  aside {
+    width: 220px;
+    padding: 1.5rem;
+  }
+
+  aside a {
+    font-size: 1.5rem;
+  }
+
+  main h1 {
+    font-size: 2.5rem;
+  }
+
+  main h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column-reverse;
+  }
+
+  aside {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  aside ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  aside ul li {
+    flex: 1 1 30%;
+    text-align: center;
+  }
+
+  .special {
+    margin: 1rem auto;
+    width: 90%;
+  }
+
+  main {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .logo {
+    font-size: 3rem;
+  }
+
+  main h1 {
+    font-size: 2.2rem;
+  }
+
+  main h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  aside ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  aside ul li {
+    flex: 1 1 100%;
+  }
+
+  aside a {
+    font-size: 1.4rem;
+  }
+
+  main h1 {
+    font-size: 1.8rem;
+  }
+
+  main h3 {
+    font-size: 1rem;
+  }
+}
+
+/* === Popup Modal === */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  color: #a66000;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.popup-content button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: #feab51;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #a66000;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
